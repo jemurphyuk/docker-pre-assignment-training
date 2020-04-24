@@ -18,4 +18,10 @@ Containers offer a packaging mechanism in which applications can be abstracted f
 ### Commands
 - ``docker pull`` - command to download an image
 - ``docker run`` - run application from images
-- ``docker ps`` - show a list of running containers
+  - ``docker run --rm`` - run function that automatically deletes container once exited
+- ``docker ps`` - show a list of running containers, with  ``-a`` for containers that have been run
+- ``docker rm`` - remove containers once they are finished (this will prevent usage of disk space)
+  - ``docker rm $(docker ps -a -q -f status=exited)`` - will remove all containers that have a status of exited, with ``-q`` returning the numeric IDs to delete and ``-f`` to filter output based on conditions
+  - ``docker container prune`` is also available to achieve same results as above in new docker builds
+- ``docker port [CONTAINER]`` - view running ports
+- ``docker images`` - list of images available locally
