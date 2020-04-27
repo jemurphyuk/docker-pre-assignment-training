@@ -6,12 +6,6 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-  # The most common configuration options are documented and commented below.
-  # For a complete reference, please see the online documentation at
-  # https://docs.vagrantup.com.
-
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/xenial64"
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -22,19 +16,15 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 1433, host: 1434 # using 34 on host to prevent conflict
   config.vm.network "forwarded_port", guest: 5432, host: 5434 # using 5433 on host to prevent conflict
 
-
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
+  # Share additional folder to guest VM. First argument is path on
+  # host to the actual folder. Second argument is path on guest to mount folder
+  # Optional third argument, set of non-required options.
   config.vm.synced_folder "share/", "/vagrant"
 
   # Provision Docker and git
   config.vm.provision :docker
-
   config.vm.provision "shell" do |s|
     s.inline = "sudo apt-get update"
     s.inline = "sudo apt-get install -y git"
   end
-
 end
