@@ -25,3 +25,5 @@ Containers offer a packaging mechanism in which applications can be abstracted f
   - ``docker container prune`` is also available to achieve same results as above in new docker builds
 - ``docker port [CONTAINER]`` - view running ports
 - ``docker images`` - list of images available locally
+
+## Using VirtualBox and Vagrant to avoid need for 10 Pro and Hyper-V
