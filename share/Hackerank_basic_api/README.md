@@ -5,6 +5,8 @@ This project is to show a basic implementation of webscraping and generating JSO
 ## Forked succesful and pulled
 
 ## Dockerfile
+``docker build . -t james-docker-image`` - command to build image using Dockerfile as a provisioner
+
 ````
 FROM ubuntu:20.04
 
