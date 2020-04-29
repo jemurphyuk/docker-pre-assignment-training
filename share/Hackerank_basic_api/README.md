@@ -5,9 +5,10 @@ This project is to show a basic implementation of webscraping and generating JSO
 ## Forked succesful and pulled
 
 ## Dockerfile
-``FROM ubuntu:20.04
+````
+FROM ubuntu:20.04
 
-WORKDIR /home
+WORKDIR /home/Hackerank_basic_api
 
 COPY . .
 
@@ -16,7 +17,12 @@ apt-get install -y git && \
 apt-get install -y python3.8 && \
 apt-get install -y python3-pip \
 
-RUN pip install -r hackerank/requirements.txt
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python3.8"]`` - running python3.8 on previously installed
-``CMD ["app.py"]`` -
+ENTRYPOINT ["python3.8"]
+````
+- running python3.8 on previously installed, configures a container that will run as an executable
+````
+CMD ["app.py"]
+````
+- running command to set default command when docker runs container
