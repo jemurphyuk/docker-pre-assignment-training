@@ -10,7 +10,7 @@ Isolation in VMs gives a high computational overhead, containers leverage low-le
 Containers offer a packaging mechanism in which applications can be abstracted from running environment. This decoupling allow apps to deployed consistently regardless of whether target environment is a private data centre or public cloud, making environments that can be run anywhere.
 
 ## Why use Docker?
-Communication across OS, using multiple containers which can be booted up as needed in the event of a crashvag
+Communication across OS, using multiple containers which can be booted up as needed in the event of a crash
 
 ### Terminology
 - Images - blueprints of application which form basis of containers
@@ -34,6 +34,7 @@ Communication across OS, using multiple containers which can be booted up as nee
 - ``docker images`` - list of images available locally
 - ``:latest`` - tag that is automatically added to show latest version, can add own tags for previous versions
 - ``docker stop [NAME]`` - stop container but not destroy
+- ``docker inspect [NAME]`` -
 
 ## Using VirtualBox and Vagrant to avoid need for 10 Pro and Hyper-V
 Use VirtualBox/Vagrant to create Linux virtual machine to run install and run docker on
@@ -49,3 +50,11 @@ Execute commands to docker container
 - ``docker exec [CONTAINER] 'command'`` - execute command in nginx container
 - ``docker run -d --name nginx_james -v /www/data/:/vagrant/ -p 80:80 nginx`` - didnt appear to share folder
 - ``docker run -itd --name....`` - interactive container, ubuntu server within a container
+- ``docker run -itd --name [NAME] -v /vagrant/:/home -p 5000:80`` - due to already mapped port 80
+- ``docker attach [NAME]`` to access local environments, /home for local environments
+- apt-get install git, apt-get install python3.8, apt-get install python3-pip
+- ``pip install -r [FILE_NAME]`` install from given requirements file
+
+
+- docker build . -t hack_py
+- docker run -itd ..

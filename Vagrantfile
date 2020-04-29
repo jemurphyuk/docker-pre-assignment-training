@@ -12,9 +12,9 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 80, host: 8080 # using 8081 on host to prevent local conflict
-  config.vm.network "forwarded_port", guest: 1433, host: 1433 # using 34 on host to prevent conflict
-  config.vm.network "forwarded_port", guest: 5432, host: 5432 # using 5433 on host to prevent conflict
+  config.vm.network "forwarded_port", guest: 5000, host: 5001 # using 8081 on host to prevent local conflict
+  config.vm.network "forwarded_port", guest: 1433, host: 1434 # using 34 on host to prevent conflict
+  config.vm.network "forwarded_port", guest: 5432, host: 5433 # using 5433 on host to prevent conflict
 
   # Share additional folder to guest VM. First argument is path on
   # host to the actual folder. Second argument is path on guest to mount folder
